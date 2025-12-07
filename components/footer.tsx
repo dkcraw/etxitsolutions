@@ -10,7 +10,8 @@ const footerLinks = {
   company: [
     { name: "About Us", href: "#about" },
     { name: "Contact", href: "#contact" },
-    { name: "Client Portal", href: "#" },
+    { name: "Client Portal", href: "https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx"
+ },
   ],
 }
 
