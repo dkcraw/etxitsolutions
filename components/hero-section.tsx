@@ -6,7 +6,11 @@ export function HeroSection() {
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src="/modern-office-workspace-with-computers-and-technol.jpg" alt="" className="w-full h-full object-cover" />
+        <img
+          src="/modern-office-workspace-with-computers-and-technol.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-background/85" />
       </div>
 
@@ -42,16 +46,19 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group">
-              Schedule a Consultation
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group">
+              <a href="#contact">
+                Schedule a Consultation
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-border text-foreground hover:bg-secondary bg-transparent"
             >
-              Explore Our Services
+              <a href="#services">Explore Our Services</a>
             </Button>
           </div>
 

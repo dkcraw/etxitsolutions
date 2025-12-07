@@ -14,7 +14,9 @@ export function Header() {
       <div className="border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-end items-center gap-6 text-sm">
           <a
-            href="https://etxitsolutions.com/portal"
+            href="https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <Globe className="w-4 h-4" />
@@ -32,7 +34,7 @@ export function Header() {
 
       {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-15">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-bold tracking-tight">
@@ -44,7 +46,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {["Home", "About", "Services", "Contact"].map((item) => (
+            {["Home", "Services", "About", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -58,7 +60,9 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Get Started</Button>
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <a href="#contact">Get Started</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,7 +86,11 @@ export function Header() {
                 {item}
               </Link>
             ))}
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2">Get Started</Button>
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2">
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                Get Started
+              </a>
+            </Button>
           </nav>
         </div>
       )}
