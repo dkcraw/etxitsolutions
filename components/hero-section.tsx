@@ -34,8 +34,8 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-balance">
-            Where <span className="text-primary">deep tech</span> meets{" "}
-            <span className="text-muted-foreground">human mindset.</span>
+            Managed <span className="text-primary">IT support</span> for{" "}
+            <span className="text-muted-foreground">East Texas</span>
           </h1>
 
           {/* Subheadline */}
