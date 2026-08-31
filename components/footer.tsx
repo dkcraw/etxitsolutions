@@ -67,7 +67,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 ETX IT Solutions. All rights reserved. <br>
+            © 2026 ETX IT Solutions. All rights reserved. <br />
 		Business Security License Number: B31253001
           </p>
           <p className="text-sm text-muted-foreground">Proudly serving East Texas</p>
