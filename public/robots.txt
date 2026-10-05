@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://etxitsolutions.com
+Sitemap: https://etxitsolutions.com/sitemap.xml
