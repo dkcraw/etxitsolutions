@@ -1,17 +1,18 @@
 import Link from "next/link"
+import { serviceAreaLinks } from "@/lib/towns"
 
 const footerLinks = {
   services: [
-    { name: "Managed IT Support", href: "#services" },
-    { name: "Infrastructure & Security", href: "#services" },
-    { name: "HIPAA Compliance", href: "#services" },
-    { name: "Websites & Social Media", href: "#services" },
+    { name: "Managed IT Support", href: "/#services" },
+    { name: "Infrastructure & Security", href: "/#services" },
+    { name: "HIPAA Compliance", href: "/#services" },
+    { name: "Websites & Social Media", href: "/#services" },
+    { name: "Structured Cabling & Projects", href: "/structured-cabling" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Contact", href: "#contact" },
-    { name: "Client Portal", href: "https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx"
- },
+    { name: "About Us", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
+    { name: "Client Portal", href: "https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx" },
   ],
 }
 
@@ -62,6 +63,19 @@ export function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="border-t border-border mt-12 pt-8">
+          <h4 className="font-semibold text-foreground mb-4">Areas we serve</h4>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            {serviceAreaLinks.map((area) => (
+              <li key={area.href}>
+                <Link href={area.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {area.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Bottom Bar */}

@@ -1,6 +1,13 @@
-import { Monitor, Shield, FileCheck, Globe, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { Monitor, Shield, FileCheck, Globe, Cable, ArrowRight } from "lucide-react"
 
-const services = [
+const services: {
+  icon: typeof Monitor
+  title: string
+  description: string
+  number: string
+  href?: string
+}[] = [
   {
     icon: Monitor,
     title: "Managed IT Support",
@@ -28,6 +35,14 @@ const services = [
     description:
       "Over 90% of businesses leverage digital tools for growth. ETX IT Solutions can assist you in tapping into social media, websites, and online advertising to boost your leads, sales, and revenue using familiar platforms.",
     number: "04",
+  },
+  {
+    icon: Cable,
+    title: "Structured Cabling & Projects",
+    description:
+      "Cat6, Cat6A, and fiber for offices and occupied buildings, including cabling retrofits in bank branches. We dress, label, and test the runs, and we hand over documentation. ETX also takes on data center and network room build-outs.",
+    number: "05",
+    href: "/structured-cabling",
   },
 ]
 
@@ -67,10 +82,17 @@ export function ServicesSection() {
 
               <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
 
-              <button className="flex items-center gap-2 text-sm text-primary font-medium group/btn">
-                Read more
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </button>
+              {service.href ? (
+                <Link href={service.href} className="flex items-center gap-2 text-sm text-primary font-medium group/btn">
+                  Read more
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              ) : (
+                <button className="flex items-center gap-2 text-sm text-primary font-medium group/btn">
+                  Read more
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </button>
+              )}
             </div>
           ))}
         </div>

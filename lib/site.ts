@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+
 export const SITE_URL = "https://etxitsolutions.com"
 export const SITE_NAME = "ETX IT Solutions"
 
@@ -18,13 +20,58 @@ export const SITE_ADDRESS = {
   addressCountry: "US",
 } as const
 
+export const SITE_EMAIL = "info@etxitsolutions.com"
+
+export function postalAddressJsonLd() {
+  return {
+    "@type": "PostalAddress" as const,
+    ...SITE_ADDRESS,
+  }
+}
+
+export function pageMetadata({
+  title,
+  description,
+  path,
+}: {
+  title: string
+  description: string
+  path: string
+}): Metadata {
+  const url = `${SITE_URL}${path}`
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url,
+      siteName: SITE_NAME,
+      title,
+      description,
+      images: [
+        {
+          url: "/modern-office-workspace-with-computers-and-technol.jpg",
+          alt: "ETX IT Solutions — managed IT and cybersecurity in Lufkin, Texas",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  }
+}
+
 export const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: SITE_NAME,
   url: SITE_URL,
   telephone: SITE_TELEPHONE,
-  email: "info@etxitsolutions.com",
+  email: SITE_EMAIL,
   description: SITE_DESCRIPTION,
   address: {
     "@type": "PostalAddress",
