@@ -6,7 +6,7 @@ import { Send, MapPin, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { contactSchema, fieldErrors } from "@/lib/contact"
+import { CONTACT_RECIPIENT, contactSchema, fieldErrors } from "@/lib/contact"
 
 type FormState = {
   name: string
@@ -169,8 +169,8 @@ export function ContactSection() {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Your note is on its way to{" "}
-                  <a href="mailto:info@etxitsolutions.com" className="text-primary hover:underline">
-                    info@etxitsolutions.com
+                  <a href={`mailto:${CONTACT_RECIPIENT}`} className="text-primary hover:underline">
+                    {CONTACT_RECIPIENT}
                   </a>
                   . If you would rather talk now, call{" "}
                   <a href="tel:936-674-5440" className="text-primary hover:underline">
@@ -304,8 +304,8 @@ export function ContactSection() {
                         936-674-5440
                       </a>{" "}
                       or email{" "}
-                      <a href="mailto:info@etxitsolutions.com" className="font-medium text-primary hover:underline">
-                        info@etxitsolutions.com
+                      <a href={`mailto:${CONTACT_RECIPIENT}`} className="font-medium text-primary hover:underline">
+                        {CONTACT_RECIPIENT}
                       </a>
                       .
                     </p>

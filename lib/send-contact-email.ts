@@ -1,7 +1,7 @@
-import type { ContactInput } from "@/lib/contact"
+import { CONTACT_RECIPIENT, type ContactInput } from "@/lib/contact"
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails"
-const DEFAULT_TO = "info@etxitsolutions.com"
+const DEFAULT_TO = CONTACT_RECIPIENT
 const DEFAULT_FROM = "ETX IT Solutions <notifications@etxitsolutions.com>"
 
 export type SendResult = { status: "sent" } | { status: "not_configured" } | { status: "failed" }

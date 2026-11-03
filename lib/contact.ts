@@ -1,5 +1,8 @@
 import { z } from "zod"
 
+/** Inbox that receives homepage form submissions. */
+export const CONTACT_RECIPIENT = "contact@etxitsolutions.com"
+
 function validPhone(value: string) {
   if (value === "") return true
   if (!/^[0-9+().\-\s]+$/.test(value)) return false
