@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { serviceAreaLinks } from "@/lib/towns"
+import { TOWNS, townPath } from "@/lib/towns"
+
+const servedPlaces = [{ name: "Lufkin", href: "/" }, ...TOWNS.map((town) => ({ name: town.city, href: townPath(town) }))]
 
 const footerLinks = {
   services: [
@@ -65,26 +67,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8">
-          <h4 className="font-semibold text-foreground mb-4">Areas we serve</h4>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            {serviceAreaLinks.map((area) => (
-              <li key={area.href}>
-                <Link href={area.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  {area.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
             © 2026 ETX IT Solutions. All rights reserved. <br />
 		Business Security License Number: B31253001
           </p>
-          <p className="text-sm text-muted-foreground">Proudly serving East Texas</p>
+          <p className="text-sm text-muted-foreground text-center sm:text-right">
+            Serving{" "}
+            {servedPlaces.map((place, index) => (
+              <span key={place.href}>
+                {index > 0 ? ", " : null}
+                <Link href={place.href} className="hover:text-primary transition-colors">
+                  {place.name}
+                </Link>
+              </span>
+            ))}
+          </p>
         </div>
       </div>
     </footer>
