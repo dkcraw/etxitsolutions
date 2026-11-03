@@ -3,11 +3,10 @@ import type { Metadata } from "next"
 export const SITE_URL = "https://etxitsolutions.com"
 export const SITE_NAME = "ETX IT Solutions"
 
-export const SITE_TITLE =
-  "Managed IT & Cybersecurity in Lufkin, TX | ETX IT Solutions"
+export const SITE_TITLE = "IT Company in Lufkin, TX | Managed IT & Cybersecurity"
 
 export const SITE_DESCRIPTION =
-  "ETX IT Solutions provides managed IT, cybersecurity, HIPAA compliance, and infrastructure support for businesses in Lufkin and East Texas. Call (936) 674-5440."
+  "IT company in Lufkin, TX for managed IT, cybersecurity, and business IT support across East Texas. ETX IT Solutions. Call 936-674-5440."
 
 /** E.164 form for schema; visible site number is 936-674-5440. */
 export const SITE_TELEPHONE = "+1-936-674-5440"
