@@ -2,8 +2,21 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Phone, Globe, Menu, X } from "lucide-react"
+import { Phone, Globe, CreditCard, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+const utilityLinks = [
+  {
+    name: "Bill Pay",
+    href: "https://pay.etxitsolutions.com",
+    icon: CreditCard,
+  },
+  {
+    name: "Client Portal",
+    href: "https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx",
+    icon: Globe,
+  },
+]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -13,15 +26,18 @@ export function Header() {
       {/* Top Bar */}
       <div className="border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-end items-center gap-6 text-sm">
-          <a
-            href="https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Globe className="w-4 h-4" />
-            <span className="hidden sm:inline">Client Portal</span>
-          </a>
+          {utilityLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <link.icon className="w-4 h-4" />
+              <span className="hidden sm:inline">{link.name}</span>
+            </a>
+          ))}
           <a
             href="tel:936-674-5440"
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
@@ -49,7 +65,7 @@ export function Header() {
             {["Home", "Services", "About", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/#${item.toLowerCase()}`}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item}
@@ -61,7 +77,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <a href="#contact">Get Started</a>
+              <a href="/#contact">Get Started</a>
             </Button>
           </div>
 
@@ -76,10 +92,25 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <nav className="flex flex-col p-4 gap-4">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+              {utilityLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <link.icon className="w-4 h-4" />
+                  <span>{link.name}</span>
+                </a>
+              ))}
+            </div>
             {["Home", "About", "Services", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/#${item.toLowerCase()}`}
                 className="text-base font-medium text-foreground py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -87,7 +118,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2">
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
+              <a href="/#contact" onClick={() => setMobileMenuOpen(false)}>
                 Get Started
               </a>
             </Button>

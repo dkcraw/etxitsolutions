@@ -1,17 +1,20 @@
 import Link from "next/link"
+import { TOWNS, townPath } from "@/lib/towns"
+
+const servedPlaces = [{ name: "Lufkin", href: "/" }, ...TOWNS.map((town) => ({ name: town.city, href: townPath(town) }))]
 
 const footerLinks = {
   services: [
-    { name: "Managed IT Support", href: "#services" },
-    { name: "Infrastructure & Security", href: "#services" },
-    { name: "HIPAA Compliance", href: "#services" },
-    { name: "Websites & Social Media", href: "#services" },
+    { name: "Managed IT Support", href: "/#services" },
+    { name: "Infrastructure & Security", href: "/#services" },
+    { name: "HIPAA Compliance", href: "/#services" },
+    { name: "Websites & Social Media", href: "/#services" },
+    { name: "Structured Cabling & Projects", href: "/structured-cabling" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Contact", href: "#contact" },
-    { name: "Client Portal", href: "https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx"
- },
+    { name: "About Us", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
+    { name: "Client Portal", href: "https://etxitsolutions.itclientportal.com/ClientPortal/Login.aspx" },
   ],
 }
 
@@ -70,7 +73,17 @@ export function Footer() {
             © 2026 ETX IT Solutions. All rights reserved. <br />
 		Business Security License Number: B31253001
           </p>
-          <p className="text-sm text-muted-foreground">Proudly serving East Texas</p>
+          <p className="text-sm text-muted-foreground text-center sm:text-right">
+            Serving{" "}
+            {servedPlaces.map((place, index) => (
+              <span key={place.href}>
+                {index > 0 ? ", " : null}
+                <Link href={place.href} className="hover:text-primary transition-colors">
+                  {place.name}
+                </Link>
+              </span>
+            ))}
+          </p>
         </div>
       </div>
     </footer>

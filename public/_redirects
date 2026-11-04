@@ -1,0 +1,21 @@
+# Cloudflare Pages path redirects. Destinations may include a fragment.
+# Hostname rules are not supported here and are intentionally omitted.
+# www.etxitsolutions.com → https://etxitsolutions.com is a zone Redirect Rule
+# in the Cloudflare dashboard. Do not add a second www redirect in this file.
+# Keep these paths in sync with lib/legacy-redirects.ts.
+
+/services /#services 301
+/services/ /#services 301
+/about /#about 301
+/about/ /#about 301
+/contact /#contact 301
+/contact/ /#contact 301
+/privacy / 301
+/privacy/ / 301
+
+/managed-it-nacogdoches-tx/ /managed-it-nacogdoches-tx 301
+/managed-it-diboll-tx/ /managed-it-diboll-tx 301
+/managed-it-livingston-tx/ /managed-it-livingston-tx 301
+/managed-it-crockett-tx/ /managed-it-crockett-tx 301
+/managed-it-huntington-tx/ /managed-it-huntington-tx 301
+/structured-cabling/ /structured-cabling 301
