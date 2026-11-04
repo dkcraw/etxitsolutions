@@ -7,7 +7,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // /services/ must 301 straight to /#services. Next's built-in trailing-slash
-  // redirect is a 308 and would fire first. proxy.ts handles both forms.
+  // redirect is a 308 and would fire first. middleware.ts handles both forms.
   skipTrailingSlashRedirect: true,
 }
 

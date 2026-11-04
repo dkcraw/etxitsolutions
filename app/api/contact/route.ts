@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { contactSchema, fieldErrors, honeypotTripped } from "@/lib/contact"
 import { sendContactEmail } from "@/lib/send-contact-email"
 
+export const runtime = "edge"
 export const dynamic = "force-dynamic"
 
 const MAX_BODY_BYTES = 20_000

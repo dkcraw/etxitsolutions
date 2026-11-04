@@ -9,7 +9,7 @@ function redirect(location: string) {
   })
 }
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl
   const legacy = LEGACY_REDIRECTS[pathname]
 
@@ -24,6 +24,8 @@ export function proxy(request: NextRequest) {
 
   return NextResponse.next()
 }
+
+export const runtime = "experimental-edge"
 
 export const config = {
   matcher: ["/((?!_next/static|_next/image|.*\\..*).*)"],
