@@ -19,7 +19,29 @@ export const SITE_ADDRESS = {
   addressCountry: "US",
 } as const
 
-export const SITE_EMAIL = "info@etxitsolutions.com"
+export const SITE_EMAIL = "contact@etxitsolutions.com"
+
+export const SITE_LOGO = `${SITE_URL}/etx-logo.png`
+
+export const SITE_GEO = {
+  "@type": "GeoCoordinates" as const,
+  latitude: 31.338449,
+  longitude: -94.726371,
+}
+
+export const SITE_SAME_AS = [
+  "https://www.facebook.com/ETXITSOLUTIONS/",
+  "https://members.lufkintexas.org/list/member/etx-it-solutions-7955",
+]
+
+export const SITE_OPENING_HOURS = [
+  {
+    "@type": "OpeningHoursSpecification" as const,
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+]
 
 export function postalAddressJsonLd() {
   return {
@@ -69,6 +91,7 @@ export const localBusinessJsonLd = {
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: SITE_NAME,
   url: SITE_URL,
+  logo: SITE_LOGO,
   telephone: SITE_TELEPHONE,
   email: SITE_EMAIL,
   description: SITE_DESCRIPTION,
@@ -76,6 +99,9 @@ export const localBusinessJsonLd = {
     "@type": "PostalAddress",
     ...SITE_ADDRESS,
   },
+  geo: SITE_GEO,
+  openingHoursSpecification: SITE_OPENING_HOURS,
+  sameAs: SITE_SAME_AS,
   areaServed: [
     { "@type": "City", name: "Lufkin" },
     { "@type": "AdministrativeArea", name: "Angelina County" },

@@ -83,7 +83,11 @@ export function Footer() {
                 </Link>
               </span>
             ))}{" "}
-            and surrounding areas.
+            and surrounding areas ·{" "}
+            <Link href="/cybersecurity" className="hover:text-primary transition-colors">
+              Cybersecurity &amp; HIPAA
+            </Link>
+            .
           </p>
         </div>
       </div>

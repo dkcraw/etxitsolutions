@@ -101,6 +101,18 @@ export const TOWNS: Town[] = [
       "Timber, the school district, and the businesses along US 59 are the local work. On-site visits are scheduled. Ordinary support is handled from Lufkin.",
     ],
   },
+  {
+    id: "jasper",
+    city: "Jasper",
+    county: "Jasper County",
+    slug: "managed-it-jasper-tx",
+    description:
+      "Managed IT, cybersecurity, and HIPAA support for Jasper and Jasper County from ETX IT Solutions in Lufkin, about 55 miles away. Call 936-674-5440.",
+    paragraphs: [
+      "Jasper is the county seat of Jasper County, about 55 miles southeast of Lufkin via US 69 through Zavalla and TX 63 east. ETX IT Solutions works from 315 E. Lufkin Ave. in Lufkin. There is no Jasper office.",
+      "County offices, the school district, medical clinics, timber, and businesses along US 96 and US 190 are the local work. On-site visits are scheduled. Ordinary support is handled from Lufkin.",
+    ],
+  },
 ]
 
 export function getTown(id: string) {
