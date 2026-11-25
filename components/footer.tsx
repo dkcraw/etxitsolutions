@@ -82,7 +82,8 @@ export function Footer() {
                   {place.name}
                 </Link>
               </span>
-            ))}
+            ))}{" "}
+            and surrounding areas.
           </p>
         </div>
       </div>

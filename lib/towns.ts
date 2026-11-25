@@ -77,6 +77,30 @@ export const TOWNS: Town[] = [
       "Huntington ISD, the city, and the timber, ranch, and highway businesses along US 69 make up the town. Many of the offices are a room off a shop.",
     ],
   },
+  {
+    id: "groveton",
+    city: "Groveton",
+    county: "Trinity County",
+    slug: "managed-it-groveton-tx",
+    description:
+      "Managed IT support for Groveton and Trinity County from ETX IT Solutions in Lufkin, about 30 miles away. Call 936-674-5440.",
+    paragraphs: [
+      "Groveton is the county seat of Trinity County, about 30 miles southwest of Lufkin on TX 94, which meets US 287 in town. ETX IT Solutions works from 315 E. Lufkin Ave. in Lufkin. There is no Groveton office.",
+      "The courthouse, the school district, timber, and the businesses around the square are the local work. On-site visits are scheduled. Ordinary support is handled from Lufkin.",
+    ],
+  },
+  {
+    id: "corrigan",
+    city: "Corrigan",
+    county: "Polk County",
+    slug: "managed-it-corrigan-tx",
+    description:
+      "Managed IT support for Corrigan businesses from ETX IT Solutions in Lufkin, about 25 miles south. Call 936-674-5440.",
+    paragraphs: [
+      "Corrigan is in Polk County, about 25 miles south of Lufkin on US 59, between Diboll and Livingston. ETX IT Solutions works from 315 E. Lufkin Ave. in Lufkin. There is no Corrigan office.",
+      "Timber, the school district, and the businesses along US 59 are the local work. On-site visits are scheduled. Ordinary support is handled from Lufkin.",
+    ],
+  },
 ]
 
 export function getTown(id: string) {
